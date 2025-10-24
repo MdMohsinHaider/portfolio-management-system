@@ -2,11 +2,8 @@ package com.mohsin.portfolio.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import java.util.List;
 
-/**
- * Entity representing a user's portfolio.
- */
+import java.util.List;
 
 @Entity
 @Table(name = "portfolio")
@@ -14,7 +11,6 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 public class Portfolio {
 
     @Id
@@ -25,12 +21,7 @@ public class Portfolio {
     private String email;
     private String phone;
     private String profileImageUrl;
+    private String massage;
+    private List<String> skills;
 
-    /**
-     * One portfolio can have multiple professional entries.
-     */
-    @OneToMany(mappedBy = "portfolio", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<ProfessionalDetails> professionalDetailsList;
-
-    // You can add @OneToMany mappings for projects, contacts, etc.
 }

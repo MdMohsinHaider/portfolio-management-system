@@ -2,6 +2,8 @@ package com.mohsin.portfolio.repository;
 
 import com.mohsin.portfolio.entity.Portfolio;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface PortfolioRepository extends JpaRepository<Portfolio, Long> {
+@Repository
+public interface PortfolioRepository extends JpaRepository<Portfolio,Long> {
 }
